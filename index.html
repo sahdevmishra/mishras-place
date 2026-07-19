@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FoodGrains Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Product Popup -->
+
+<div id="Popup" class="popup">
+
+<div class="popup-box">
+
+<button class="close" onclick="closePopup()">
+✖
+</button>
+
+<h2 id="popupTitle"></h2>
+
+<img id="popupImage">
+
+<p id="popupDescription"></p>
+
+<h3 id="popupPrice"></h3>
+
+<p class="stock">
+✔ Available in Stock
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+<div class="logo">
+    <img src="images/logo.png" alt="FoodGrains Store Logo">
+
+    <div class="logo-text">
+        <h2>Mishra's Place</h2>
+        <p>Fresh Grains • Wholesale & Retail</p>
+    </div>
+</div>
+<div class="cart-icon" onclick="openCart()">
+
+🛒 Cart
+<span id="cartCount">0</span>
+
+</div>
+
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#products">Products</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="slider">
+
+<div class="slide active">
+<img src="images/banner1.jpg" alt="Banner 1">
+</div>
+
+<div class="slide">
+<img src="images/banner2.jpg" alt="Banner 2">
+</div>
+
+<div class="slide">
+<img src="images/banner3.jpg" alt="Banner 3">
+</div>
+
+<button class="prev" onclick="changeSlide(-1)">❮</button>
+<button class="next" onclick="changeSlide(1)">❯</button>
+
+</div>
+
+</section>
+
+</section>
+
+<section class="features">
+
+<h2>Why Choose Mishra's Place?</h2>
+
+<div class="feature-container">
+
+<div class="feature-box">
+🚚
+<h3>Free Delivery</h3>
+<p>Free delivery on eligible orders.</p>
+</div>
+
+<div class="feature-box">
+🌾
+<h3>Premium Quality</h3>
+<p>Fresh grains sourced from trusted suppliers.</p>
+</div>
+
+<div class="feature-box">
+💰
+<h3>Best Prices</h3>
+<p>Wholesale and retail prices at great value.</p>
+</div>
+
+<div class="feature-box">
+📞
+<h3>24×7 Support</h3>
+<p>Order anytime through WhatsApp.</p>
+</div>
+
+</div>
+
+</section>
+</section>
+
+<!-- Best Selling Products -->
+
+<section class="best-selling">
+
+<h2>🔥 Best Selling Products</h2>
+
+<div class="best-container">
+
+<div class="best-card">
+<img src="images/wheat.jpg" alt="Premium Wheat">
+<h3>Premium Wheat</h3>
+<p>⭐ Most Purchased</p>
+</div>
+
+<div class="best-card">
+<img src="images/rice.jpg" alt="Basmati Rice">
+<h3>Basmati Rice</h3>
+<p>⭐ Customer Favorite</p>
+</div>
+
+<div class="best-card">
+<img src="images/dal.jpg" alt="Quality Pulses">
+<h3>⭐ Top Rated</h3>
+<p>Quality Pulses</p>
+</div>
+
+</div>
+
+</section>
+<section class="testimonials">
+
+<h2>⭐ Customer Reviews</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial">
+<p>"Excellent quality wheat and fast delivery."</p>
+<h4>- Rahul Sharma</h4>
+</div>
+
+<div class="testimonial">
+<p>"Best rice at an affordable price. Highly recommended!"</p>
+<h4>- Priya Verma</h4>
+</div>
+
+<div class="testimonial">
+<p>"Fresh pulses and great customer service."</p>
+<h4>- Amit Singh</h4>
+</div>
+
+</div>
+
+</section>
+<!-- Products -->
+
+<section class="products" id="products">
+<!-- Products -->
+
+<section class="products" id="products">
+
+
+
+
+<!-- Products -->
+
+<section class="products" id="products">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchBox"
+placeholder="🔍 Search products..."
+onkeyup="searchProducts()">
+
+</div>
+<div class="sort-box">
+
+<label>Sort By: </label>
+
+<select id="sortSelect" onchange="sortProducts()">
+
+<option value="default">Default</option>
+
+<option value="low">Price: Low to High</option>
+
+<option value="high">Price: High to Low</option>
+
+</select>
+
+</div>
+
+<h2>Our Products</h2>
+
+<div class="category-buttons">
+
+<button onclick="filterProducts('all')">All</button>
+
+<button onclick="filterProducts('wheat')">🌾 Wheat</button>
+
+<button onclick="filterProducts('rice')">🍚 Rice</button>
+
+<button onclick="filterProducts('flour')">🥣 Flour</button>
+
+<button onclick="filterProducts('pulses')">🫘 Pulses</button>
+
+</div>
+
+
+<div class="product-container">
+
+
+
+
+<div class="card wheat" data-price="40">
+<span class="badge">10% OFF</span>
+<button class="wishlist" onclick="toggleWishlist(this)">
+🤍
+</button>
+<img src="images/wheat.jpg"
+onclick="openPopup(
+'Premium Wheat',
+'High quality wheat grains, cleaned and fresh.',
+'₹40 / Kg',
+'images/wheat.jpg'
+)">
+
+
+<h3>
+Premium Wheat
+</h3>
+
+
+<p>
+High quality wheat grains
+</p>
+<p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+<div class="reviews">
+
+<p>👤 Rahul: ⭐⭐⭐⭐⭐ Excellent quality!</p>
+
+<p>👤 Priya: ⭐⭐⭐⭐ Fresh grains.</p>
+
+</div>
+<h4>
+₹40 / Kg
+</h4>
+<p class="delivery">🚚 Free Delivery</p>
+
+<p class="stock">
+✔ Available in Stock
+</p>
+
+
+<input type="number" id="wheatQty" value="1" min="1">
+
+
+<button type="button" onclick="addToCart('Premium Wheat',40,'wheatQty')">
+
+Add To Cart
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card rice" data-price="90">
+
+<span class="badge">15% OFF</span>
+
+
+<button class="wishlist" onclick="toggleWishlist(this)">
+🤍
+</button>
+<img src="images/rice.jpg"
+onclick="openPopup(
+'Basmati Rice',
+'Fresh aromatic basmati rice with premium quality.',
+'₹90 / Kg',
+'images/rice.jpg'
+)">
+
+<h3>Basmati Rice</h3>
+
+<p>Fresh aromatic rice</p>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+<div class="reviews">
+
+<p>👤 Aman: ⭐⭐⭐⭐⭐ Best basmati rice.</p>
+
+<p>👤 Neha: ⭐⭐⭐⭐⭐ Highly recommended.</p>
+
+</div>
+<h4>₹90 / Kg</h4>
+
+<p class="delivery">🚚 Free Delivery</p>
+
+<p class="stock">✔ Available in Stock</p>
+
+<input type="number" id="riceQty" value="1" min="1">
+
+<button type="button" onclick="addToCart('Basmati Rice',90,'riceQty')">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card flour" data-price="45">
+
+<span class="badge">8% OFF</span>
+
+<button class="wishlist" onclick="toggleWishlist(this)">
+🤍
+</button>
+
+<img src="images/aata.jpg"
+onclick="openPopup(
+'Fresh Flour',
+'Pure wheat flour made from quality wheat grains.',
+'₹45 / Kg',
+'images/aata.jpg'
+)">
+
+<h3>Fresh Flour</h3>
+
+<p>Pure wheat flour</p>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.7)</p>
+<div class="reviews">
+
+<p>👤 Mohit: ⭐⭐⭐⭐⭐ Very fresh.</p>
+
+<p>👤 Riya: ⭐⭐⭐⭐ Soft flour.</p>
+
+</div>
+<h4>₹45 / Kg</h4>
+
+<p class="delivery">🚚 Free Delivery</p>
+
+<p class="stock">✔ Available in Stock</p>
+
+<input type="number" id="aataQty" value="1" min="1">
+
+<button type="button" onclick="addToCart('Fresh Flour',45,'aataQty')">
+Add To Cart
+</button>
+
+</div>
+
+
+<div class="card pulses" data-price="120">
+
+<span class="badge">12% OFF</span>
+
+<button class="wishlist" onclick="toggleWishlist(this)">
+🤍
+</button>
+
+<img src="images/dal.jpg"
+onclick="openPopup(
+'Quality Pulses',
+'Healthy and premium quality pulses for your family.',
+'₹120 / Kg',
+'images/dal.jpg'
+)">
+
+<h3>Quality Pulses</h3>
+
+<p>Healthy premium pulses</p>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+<div class="reviews">
+
+<p>👤 Karan: ⭐⭐⭐⭐⭐ Premium quality.</p>
+
+<p>👤 Anjali: ⭐⭐⭐⭐⭐ Healthy and clean.</p>
+
+</div>
+<h4>₹120 / Kg</h4>
+
+<p class="delivery">🚚 Free Delivery</p>
+
+<p class="stock">✔ Available in Stock</p>
+
+<input type="number" id="dalQty" value="1" min="1">
+
+<button type="button" onclick="addToCart('Quality Pulses',120,'dalQty')">
+Add To Cart
+</button>
+
+</div>
+
+
+
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- Cart -->
+
+<section class="cart">
+
+
+<h2>
+Your Cart
+</h2>
+
+
+<div id="cartItems">
+
+No items added yet
+
+</div>
+
+
+
+<h3 id="total">
+Total: ₹0
+</h3>
+
+
+
+<h3>
+Delivery Details
+</h3>
+
+
+<input id="customerName" placeholder="Your Name">
+
+<br><br>
+
+
+<input id="customerAddress" placeholder="Your Address">
+
+<br><br>
+
+
+<button class="btn" onclick="sendOrder()">
+
+Order Now On WhatsApp
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- About -->
+
+<section class="about" id="about">
+
+<h2>
+About Us
+</h2>
+
+
+<p>
+FoodGrains Store provides fresh and high quality grains
+with trusted quality and affordable prices.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Contact -->
+
+<section class="contact" id="contact">
+
+
+<h2>
+Contact Us
+</h2>
+
+
+<input placeholder="Your Name">
+
+<br><br>
+
+
+<input placeholder="Your Email">
+
+
+<br><br>
+
+
+<textarea placeholder="Your Message"></textarea>
+
+
+<br><br>
+
+
+<button class="btn">
+
+Send Message
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+<h3>Mishra's Place</h3>
+<p>Fresh grains with trusted quality at affordable prices.</p>
+</div>
+
+<div class="footer-box">
+<h3>Quick Links</h3>
+<p><a href="#">Home</a></p>
+<p><a href="#products">Products</a></p>
+<p><a href="#about">About</a></p>
+<p><a href="#contact">Contact</a></p>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>📞 +91 7524862108</p>
+<p>📧 your@email.com</p>
+<p>📍 India</p>
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+© 2026 Mishra's Place. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+
+<a href="https://wa.me/917524862108"
+class="whatsapp"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+<script>
+
+let cart = [];
+
+let total = 0;
+
+
+
+
+// ADD TO CART
+
+function addToCart(name, price, id){
+
+
+let qty = Number(document.getElementById(id).value);
+
+
+if(qty < 1){
+
+alert("Enter valid quantity");
+
+return;
+
+}
+
+
+
+let existing = cart.find(item => item.name === name);
+
+
+
+if(existing){
+
+
+existing.qty += qty;
+
+existing.amount = existing.qty * price;
+
+
+}
+
+else{
+
+
+cart.push({
+
+name:name,
+
+price:price,
+
+qty:qty,
+
+amount:price * qty
+
+});
+
+
+}
+
+
+
+calculateTotal();
+displayCart();
+updateCartCount();
+saveCart();
+
+
+}
+
+
+
+
+
+
+// CALCULATE TOTAL
+
+function calculateTotal(){
+
+
+total = 0;
+
+
+cart.forEach(item=>{
+
+total += item.amount;
+
+});
+
+
+}
+
+
+
+
+
+
+// DISPLAY CART
+
+
+function displayCart(){
+
+    let items = "";
+
+    cart.forEach((item,index)=>{
+
+        items += `
+        <p>
+            ${item.name} - ${item.qty} Kg = ₹${item.amount}
+            <button onclick="removeItem(${index})">
+                Remove
+            </button>
+        </p>
+        `;
+
+    });
+
+    // Main cart
+    const cartItems = document.getElementById("cartItems");
+    const totalText = document.getElementById("total");
+
+    if(cartItems){
+        cartItems.innerHTML = items || "No items added yet";
+    }
+
+    if(totalText){
+        totalText.innerHTML = "Total: ₹" + total;
+    }
+
+    // Side cart
+    const sideItems = document.getElementById("sideCartItems");
+    const sideTotal = document.getElementById("sideTotal");
+
+    if(sideItems){
+        sideItems.innerHTML = items || "No items added yet";
+    }
+
+    if(sideTotal){
+        sideTotal.innerHTML = "Total: ₹" + total;
+    }
+
+}
+
+
+// REMOVE ITEM
+
+function removeItem(index){
+
+
+cart.splice(index,1);
+
+
+calculateTotal();
+displayCart();
+updateCartCount();
+saveCart();
+
+}
+
+
+
+
+
+
+// WHATSAPP ORDER
+
+function sendOrder(){
+
+
+if(cart.length === 0){
+
+alert("Your cart is empty");
+
+return;
+
+}
+
+
+
+let name =
+document.getElementById("customerName").value;
+
+
+let address =
+document.getElementById("customerAddress").value;
+
+
+
+let message =
+"Hello FoodGrains Store,%0A%0A";
+
+
+message +=
+"Name: " + name + "%0A";
+
+
+message +=
+"Address: " + address + "%0A%0A";
+
+
+message +=
+"Order Details:%0A";
+
+
+
+cart.forEach(item=>{
+
+
+message +=
+
+item.name +
+" - " +
+item.qty +
+" Kg = ₹" +
+item.amount +
+"%0A";
+
+
+});
+
+
+
+message +=
+
+"%0ATotal Amount: ₹" + total;
+
+
+
+window.open(
+
+"https://wa.me/917524862108?text=" + message,
+
+"_blank"
+
+);
+
+
+}
+
+
+
+
+
+
+
+// PRODUCT POPUP
+
+function openPopup(title,description,price,image){
+
+
+document.getElementById("popupTitle").innerHTML = title;
+
+
+document.getElementById("popupDescription").innerHTML = description;
+
+
+document.getElementById("popupPrice").innerHTML = price;
+
+
+document.getElementById("popupImage").src = image;
+
+
+document.getElementById("Popup").style.display = "flex";
+
+
+}
+
+
+
+
+function closePopup(){
+
+
+document.getElementById("Popup").style.display = "none";
+
+
+}
+
+function searchProducts(){
+
+const input =
+document.getElementById("searchBox").value.toLowerCase();
+
+const cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+function filterProducts(category){
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(category==="all"){
+card.style.display="block";
+}
+else if(card.classList.contains(category)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+function toggleWishlist(button){
+
+if(button.innerHTML=="🤍"){
+
+button.innerHTML="❤️";
+
+}
+else{
+
+button.innerHTML="🤍";
+
+}
+
+}
+function updateCartCount(){
+
+let count = 0;
+
+cart.forEach(item=>{
+
+count += item.qty;
+
+});
+
+document.getElementById("cartCount").innerHTML = count;
+
+}
+function openCart(){
+
+document.getElementById("sideCart").style.right="0";
+
+}
+
+function closeCart(){
+
+document.getElementById("sideCart").style.right="-420px";
+
+}
+function sortProducts(){
+
+let container = document.querySelector(".product-container");
+
+let cards = Array.from(container.querySelectorAll(".card"));
+
+let sortValue = document.getElementById("sortSelect").value;
+
+if(sortValue === "low"){
+
+cards.sort((a,b)=>Number(a.dataset.price)-Number(b.dataset.price));
+
+}
+
+else if(sortValue === "high"){
+
+cards.sort((a,b)=>Number(b.dataset.price)-Number(a.dataset.price));
+
+}
+
+cards.forEach(card=>{
+
+container.appendChild(card);
+
+});
+
+}
+function saveCart(){
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+
+function loadCart(){
+
+let savedCart = localStorage.getItem("cart");
+
+if(savedCart){
+
+cart = JSON.parse(savedCart);
+
+calculateTotal();
+displayCart();
+updateCartCount();
+
+}
+
+}
+window.onload = function(){
+    loadCart();
+};
+// ===== HERO SLIDER =====
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index){
+
+    slides.forEach(slide=>{
+        slide.classList.remove("active");
+    });
+
+    if(index >= slides.length){
+        currentSlide = 0;
+    }
+
+    if(index < 0){
+        currentSlide = slides.length - 1;
+    }
+
+    slides[currentSlide].classList.add("active");
+}
+
+function changeSlide(step){
+
+    currentSlide += step;
+
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
+
+    if(currentSlide < 0){
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+}
+
+setInterval(function(){
+    changeSlide(1);
+},3000);
+
+showSlide(currentSlide);
+</script>
+
+<div id="sideCart" class="side-cart">
+
+<div class="side-cart-header">
+
+<h2>Your Cart</h2>
+
+<button onclick="closeCart()">✖</button>
+
+</div>
+
+<div id="sideCartItems"></div>
+
+<h3 id="sideTotal">Total: ₹0</h3>
+
+</div>
+
+</body>
+
+</html>
